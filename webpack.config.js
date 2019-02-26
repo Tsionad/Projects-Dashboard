@@ -6,7 +6,12 @@ module.exports = {
   output: {
     path: path.join(__dirname, '/public'),
     filename: 'webpack_bundle.js',
-      },
+  },
+  // devServer: {
+  //   proxy: {
+  //     '/': 'http://localhost:3000',
+  //   },
+  // },
   devtool: 'eval-source-map',
   mode: 'development',
 

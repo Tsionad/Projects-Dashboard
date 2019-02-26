@@ -1,0 +1,87 @@
+.projects {
+  position: relative;
+  top: 60px;
+  left: 50%;
+  margin-left: -400px;
+  height: 540px;
+}
+
+.project {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 800px;
+  height: 72px;
+  border-bottom: 0.275px solid #000000ac;
+  background: #fffffe;
+}
+
+.project-icon {
+  left: 24px;
+  right: 84.28%;
+  top: 20px;
+  bottom: 69.27%;
+}
+
+.edit-icon {
+  position: absolute;
+  left: 220px;
+  top: 20px;
+  width: 25px;
+  height: 25px;
+}
+
+.delete-icon {
+  position: absolute;
+  right: 38px;
+  top: 20px;
+  width: 25px;
+  height: 25px;
+}
+
+.project-input {
+  position: absolute;
+  right: 540px;
+  top: 20px;
+  left: 90px;
+  width: 186px;
+  height: 30px;
+  background: #ffffff;
+  border: 1px solid #3da7fe;
+  border-radius: 2px;
+
+  line-height: 30px;
+  font-size: 16px;
+  text-indent: 14px;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.project-title {
+  position: absolute;
+  left: 102px;
+  top: 24px;
+  height: 30px;
+  margin: 0;
+
+  font-weight: 550;
+  line-height: 20px;
+  font-size: 18px;
+  letter-spacing: 0.3px;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.project-title::placeholder {
+  color: rgba(0, 0, 0, 0.45);
+}
+
+.project-date {
+  position: absolute;
+  left: 420px;
+  top: 20px;
+  height: 24px;
+
+  line-height: 32px;
+  font-size: 15px;
+  letter-spacing: 0.3px;
+  color: rgba(0, 0, 0, 0.6);
+}
