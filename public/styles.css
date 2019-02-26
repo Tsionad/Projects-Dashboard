@@ -1,0 +1,12 @@
+* {
+  font-family: 'Source Sans Pro';
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  overflow-x: auto;
+  white-space: nowrap;
+  background-color: #f7f9fd;
+  text-align: center;
+}
