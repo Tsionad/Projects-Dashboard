@@ -1,0 +1,21 @@
+.modal-dialog {
+  width: 900px;
+  margin-bottom: 160px;
+  padding-left: 250px;
+  background: 'none';
+  box-shadow: 'none';
+}
+
+.dialog-content {
+  padding: 3px;
+  margin: 8px;
+  margin-left: 30px;
+  text-align: left;
+}
+
+.q-icon {
+  position: absolute;
+  left: 24px;
+  top: 34px;
+  width: 24px;
+}
