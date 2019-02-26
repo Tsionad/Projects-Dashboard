@@ -6,7 +6,10 @@ module.exports = {
   output: {
     path: path.join(__dirname, '/public'),
     filename: 'webpack_bundle.js',
-  },
+      },
+  devtool: 'eval-source-map',
+  mode: 'development',
+
   module: {
     rules: [
       {
@@ -28,8 +31,6 @@ module.exports = {
       },
     ],
   },
-  devtool: 'inline-source-map',
-
   resolve: {
     extensions: ['.js', '.jsx'],
   },
@@ -38,5 +39,4 @@ module.exports = {
       template: './public/index.html',
     }),
   ],
-  mode: 'development',
 };
