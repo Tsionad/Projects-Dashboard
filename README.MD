@@ -12,6 +12,13 @@ To get the app up and running in development mode, run:
 npm start
 ```
 
+To run in production mode:
+
+```
+npm run pack
+```
+
+
 To start the server:
 
 ```

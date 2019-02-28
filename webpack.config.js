@@ -1,11 +1,12 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 module.exports = {
   entry: './src/index.js',
   output: {
-    path: path.join(__dirname, '/public'),
-    filename: 'webpack_bundle.js'
+    path: path.join(__dirname, '/build'),
+    filename: 'bundle.js'
   },
   // devServer: {
   //   proxy: {
@@ -43,5 +44,8 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './public/index.html'
     })
-  ]
+  ],
+  optimization: {
+    minimizer: [new UglifyJsPlugin()]
+  }
 }

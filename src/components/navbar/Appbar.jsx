@@ -1,11 +1,13 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import { AppBar, Toolbar, Typography, Fab, withStyles } from '@material-ui/core'
+import {
+  AppBar, Toolbar, Typography, Fab, withStyles,
+} from '@material-ui/core';
 
-import logo from '../../assets/ThunkableBeaver.png'
-import PlusSign from '../../assets/Plus Sign.svg'
-import style from './Appbar.css'
+import logo from '../../assets/ThunkableBeaver.png';
+import PlusSign from '../../assets/Plus Sign.svg';
+import style from './Appbar.css';
 
 const styles = {
   fabButton: {
@@ -15,10 +17,10 @@ const styles = {
     width: 60,
     backgroundColor: '#5b444a',
     '&:hover': {
-      backgroundColor: '#432f36'
-    }
-  }
-}
+      backgroundColor: '#432f36',
+    },
+  },
+};
 
 const MainHeader = ({ classes, handleNewProject }) => (
   <AppBar position="static">
@@ -31,17 +33,18 @@ const MainHeader = ({ classes, handleNewProject }) => (
         <Fab
           aria-label="Add"
           className={classes.fabButton}
-          onClick={handleNewProject}>
+          onClick={handleNewProject}
+        >
           <img className="plus-icon" src={PlusSign} alt="Plus Sign" />
         </Fab>
       </div>
     </Toolbar>
   </AppBar>
-)
+);
 
 MainHeader.propTypes = {
   classes: PropTypes.object.isRequired,
-  handleNewProject: PropTypes.func.isRequired
-}
+  handleNewProject: PropTypes.func.isRequired,
+};
 
-export default withStyles(styles)(MainHeader)
+export default withStyles(styles)(MainHeader);

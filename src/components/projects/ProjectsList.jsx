@@ -18,6 +18,7 @@ const ProjectsList = ({
 }) => {
   const renderList = _.map(projects, (project, index) => (
     <Project
+      key={project.id}
       id={project.id}
       index={index}
       project={project}
