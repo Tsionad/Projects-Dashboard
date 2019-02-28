@@ -1,26 +1,26 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import moment from 'moment'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import moment from 'moment';
 
-import styles from './Projects.css'
+import { Draggable } from 'react-beautiful-dnd';
+import styles from './Projects.css';
 
-import { Draggable } from 'react-beautiful-dnd'
 
-import defaultIcon from '../../assets/defaultProjectIcon_2x.png'
-import EditIconHover from '../../assets/EditIcon_Hover.svg'
-import DeleteIconHover from '../../assets/DeleteIcon_Hover.svg'
-import EditIcon from '../../assets/EditIcon.svg'
-import DeleteIcon from '../../assets/DeleteIcon.svg'
+import defaultIcon from '../../assets/defaultProjectIcon_2x.png';
+import EditIconHover from '../../assets/EditIcon_Hover.svg';
+import DeleteIconHover from '../../assets/DeleteIcon_Hover.svg';
+import EditIcon from '../../assets/EditIcon.svg';
+import DeleteIcon from '../../assets/DeleteIcon.svg';
 
 class Project extends Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
       isEditing: false,
       edit: EditIcon,
-      delete: DeleteIcon
-    }
+      delete: DeleteIcon,
+    };
   }
 
   render() {
@@ -30,8 +30,8 @@ class Project extends Component {
       updateProject,
       onDeleteIconClick,
       id,
-      index
-    } = this.props
+      index,
+    } = this.props;
     return (
       <Draggable draggableId={id} index={index}>
         {provided => (
@@ -39,7 +39,8 @@ class Project extends Component {
             className="project-item"
             ref={provided.innerRef}
             {...provided.draggableProps}
-            {...provided.dragHandleProps}>
+            {...provided.dragHandleProps}
+          >
             <div className="project" style={styles}>
               <img
                 className="project-icon"
@@ -48,10 +49,11 @@ class Project extends Component {
               />
               {this.state.isEditing ? (
                 <form
-                  onSubmit={e => {
-                    updateProject(e, project.id)
-                    this.setState({ isEditing: false })
-                  }}>
+                  onSubmit={(e) => {
+                    updateProject(e, project.id);
+                    this.setState({ isEditing: false });
+                  }}
+                >
                   <input
                     className="project-input"
                     type="text"
@@ -88,17 +90,17 @@ class Project extends Component {
           </div>
         )}
       </Draggable>
-    )
+    );
   }
 }
 
 Project.propTypes = {
-  id: PropTypes.string,
+  id: PropTypes.number,
   onDeleteIconClick: PropTypes.func.isRequired,
   handleProjectTitle: PropTypes.func.isRequired,
   updateProject: PropTypes.func.isRequired,
   project: PropTypes.object,
-  index: PropTypes.number
-}
+  index: PropTypes.number,
+};
 
-export default Project
+export default Project;
