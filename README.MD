@@ -23,5 +23,11 @@ yarn test
 To get the app up and running in development mode, run:
 
 ```
-yarn start
+npm start
+```
+
+To start the server:
+
+```
+npm run server
 ```

@@ -24,6 +24,7 @@ class ProjectsContainer extends Component {
     this.deleteProject = this.deleteProject.bind(this);
     this.updateProject = this.updateProject.bind(this);
     this.handleProjectTitle = this.handleProjectTitle.bind(this);
+    this.onDragOver = this.onDragOver.bind(this);
   }
 
   onDeleteIconClick(e, id) {
@@ -91,6 +92,28 @@ class ProjectsContainer extends Component {
     e.preventDefault();
   }
 
+  onDragOver(result) {
+    const { projects } = this.state
+    const shuffled = [...projects]
+
+    const { destination, source, draggableId } = result
+    if (!destination) {
+      return
+    }
+    if (
+      destination.droppableId === source.droppableId &&
+      destination.index === source.index
+    ) {
+      return
+    }
+    const dragItem = projects[source.index]
+    shuffled.splice(source.index, 1)
+    shuffled.splice(destination.index, 0, draggableId)
+    shuffled[destination.index] = dragItem
+
+    this.setState({ projects: shuffled })
+  }
+
   render() {
     return (
       <div className="projects-container" style={styles}>
@@ -100,6 +123,7 @@ class ProjectsContainer extends Component {
           updateProject={this.updateProject}
           onDeleteIconClick={this.onDeleteIconClick}
           handleProjectTitle={this.handleProjectTitle}
+          onDragOver={this.onDragOver}
           newProject={this.state.newProject}
           projects={this.state.projects}
         />
