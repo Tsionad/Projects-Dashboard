@@ -1,5 +1,5 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from 'react'
+import PropTypes from 'prop-types'
 
 import {
   withStyles,
@@ -8,11 +8,11 @@ import {
   DialogContent,
   DialogContentText,
   DialogActions,
-  Button,
-} from '@material-ui/core';
+  Button
+} from '@material-ui/core'
 
-import questionIcon from '../../assets/Question.svg';
-import styles from './Modal.css';
+import questionIcon from '../../assets/Question.svg'
+import styles from './Modal.css'
 
 const ModalDialog = props => (
   <Dialog
@@ -21,8 +21,7 @@ const ModalDialog = props => (
     open={props.visible}
     style={styles}
     aria-labelledby="alert-dialog-title"
-    aria-describedby="alert-dialog-description"
-  >
+    aria-describedby="alert-dialog-description">
     <div className="dialog-content">
       <img className="q-icon" src={questionIcon} alt="question" />
       <DialogTitle id="alert-dialog-title">
@@ -37,19 +36,22 @@ const ModalDialog = props => (
         <Button onClick={props.handleCancel} color="primary">
           NO
         </Button>
-        <Button onClick={() => props.deleteProject(props.id)} color="primary" autoFocus>
+        <Button
+          onClick={() => props.deleteProject(props.id)}
+          color="primary"
+          autoFocus>
           Yes
         </Button>
       </DialogActions>
     </div>
   </Dialog>
-);
+)
 
 ModalDialog.propTypes = {
+  id: PropTypes.number,
   deleteProject: PropTypes.func.isRequired,
   visible: PropTypes.bool,
-  handleCancel: PropTypes.func.isRequired,
-  id: PropTypes.number,
-};
+  handleCancel: PropTypes.func.isRequired
+}
 
-export default withStyles(styles)(ModalDialog);
+export default withStyles(styles)(ModalDialog)

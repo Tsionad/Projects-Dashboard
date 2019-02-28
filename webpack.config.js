@@ -1,11 +1,11 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   entry: './src/index.js',
   output: {
     path: path.join(__dirname, '/public'),
-    filename: 'webpack_bundle.js',
+    filename: 'webpack_bundle.js'
   },
   // devServer: {
   //   proxy: {
@@ -22,26 +22,26 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
-          presets: ['react', 'es2015'],
-        },
+          presets: ['react', 'es2015']
+        }
       },
       {
         test: /\.css$/,
         exclude: /node_modules/,
-        loaders: ['style-loader', 'css-loader'],
+        loaders: ['style-loader', 'css-loader']
       },
       {
         test: /\.(gif|svg|jpg|png)$/,
-        loader: 'file-loader',
-      },
-    ],
+        loader: 'file-loader'
+      }
+    ]
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: ['.js', '.jsx']
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './public/index.html',
-    }),
-  ],
-};
+      template: './public/index.html'
+    })
+  ]
+}

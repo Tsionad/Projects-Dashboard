@@ -25,6 +25,7 @@ yarn-error.log*
 
 .vscode
 .eslintrc
+.babelrc
 .env
 package-lock.json
 public/webpack_bundle.js
