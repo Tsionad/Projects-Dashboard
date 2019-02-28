@@ -51,7 +51,7 @@ const ProjectsList = ({
             </form>
           </div>
         )}
-        <Droppable droppableId="project-dnd-container">
+        <Droppable droppableId="dnd-container">
           {provided => (
             <div
               ref={provided.innerRef}
